@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 const name = prompt('Enter your name');
 sessionStorage.setItem('name', name);
-const socket = io("http://localhost:3000");
+const socket = io("https://mychat-server-iota.vercel.app/");
 socket.on("connect", () => {
     addMessage('you joined');
     socket.emit('user-connected', name);
